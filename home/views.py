@@ -6,3 +6,4 @@ def home(request):
 
 def carrinho_view(request):
     return render(request, 'carrinho.html')
+
