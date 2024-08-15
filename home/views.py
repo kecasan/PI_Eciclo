@@ -7,3 +7,5 @@ def home(request):
 def carrinho_view(request):
     return render(request, 'carrinho.html')
 
+def sobre_view(request):
+    return render(request, 'sobre.html')
