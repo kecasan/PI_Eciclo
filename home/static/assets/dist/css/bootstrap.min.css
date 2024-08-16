@@ -4,7 +4,8 @@
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */:root{--bs-blue:#0d6efd;
+ */:root{
+    --bs-blue:#0d6efd;
     --bs-indigo:#6610f2;
     --bs-purple:#6f42c1;
     --bs-pink:#d63384;
@@ -54,11 +55,13 @@
     --bs-body-font-weight:400;
     --bs-body-line-height:1.5;
     --bs-body-color:#212529;
-    --bs-body-bg:#fff}*,::after,::before{box-sizing:border-box}
+    --bs-body-bg: #ffffff}
+    *,::after,::before{box-sizing:border-box}
 
 
     @media (prefers-reduced-motion:no-preference)
     {:root{scroll-behavior:smooth}}
+
     body{
     margin:0;
     font-family:var(--bs-body-font-family);
@@ -1780,18 +1783,36 @@
                 border-bottom:1px solid rgba(0,0,0,.2);
                 border-top-left-radius:calc(.3rem - 1px);
                 border-top-right-radius:calc(.3rem - 1px)}.popover-header:empty{display:none}.popover-body{padding:1rem 1rem;
-                color:#212529}.carousel{position:relative}.carousel.pointer-event{touch-action:pan-y}.carousel-inner{position:relative;
+                color:#212529}
+                
+                .carousel{
+                position:relative}
+                
+                .carousel.pointer-event{
+                touch-action:pan-y}
+                
+                .carousel-inner{
+                position:relative;
                 width:100%;
-                overflow:hidden}.carousel-inner::after{display:block;
+                overflow:hidden}
+                
+                .carousel-inner::after
+                {display:block;
                 clear:both;
-                content:""}.carousel-item{position:relative;
+                content:""}
+                
+                .carousel-item{
+                position:relative;
                 display:none;
                 float:left;
+                height: 26rem;
                 width:100%;
                 margin-right:-100%;
                 -webkit-backface-visibility:hidden;
                 backface-visibility:hidden;
-                transition:transform .6s ease-in-out}@media (prefers-reduced-motion:reduce){.carousel-item{transition:none}}.carousel-item-next,.carousel-item-prev,.carousel-item.active{display:block}.active.carousel-item-end,.carousel-item-next:not(.carousel-item-start){transform:translateX(100%)}.active.carousel-item-start,.carousel-item-prev:not(.carousel-item-end){transform:translateX(-100%)}.carousel-fade .carousel-item{opacity:0;
+                transition:transform .6s ease-in-out}
+                
+                @media (prefers-reduced-motion:reduce){.carousel-item{transition:none}}.carousel-item-next,.carousel-item-prev,.carousel-item.active{display:block}.active.carousel-item-end,.carousel-item-next:not(.carousel-item-start){transform:translateX(100%)}.active.carousel-item-start,.carousel-item-prev:not(.carousel-item-end){transform:translateX(-100%)}.carousel-fade .carousel-item{opacity:0;
                 transition-property:opacity;
                 transform:none}.carousel-fade .carousel-item-next.carousel-item-start,.carousel-fade .carousel-item-prev.carousel-item-end,.carousel-fade .carousel-item.active{z-index:1;
                 opacity:1}.carousel-fade .active.carousel-item-end,.carousel-fade .active.carousel-item-start{z-index:0;

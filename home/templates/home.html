@@ -10,12 +10,10 @@
     
     <title>E-ciclo</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
     <link rel="shortcut icon" type="imagex/png" href="media\home\icone.ico">
   
     <!-- Bootstrap core CSS -->
 <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'assets/dist/css/custom.css' %}" rel="stylesheet">
 <link href="{% static 'carousel.css' %}" rel="stylesheet">
 
     <style>
@@ -40,45 +38,42 @@
   </head>
   <body>
     
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <img class="navbar-brand" src="media/home/logo.gif" alt="logo" width="100px" heigth="100px"></img>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Página Incial</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'carrinho' %}">Carrinho</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="#"></a>
-          </li>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:400px;">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Cadastro</a>
-          </li>
-        </ul>
-        </form>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <img class="navbar-brand" src="media/home/logo.gif" alt="logo" width="100px" height="100px">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Página Incial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Carrinho</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Sobre</a>
+              </li>
+            </ul>
+            <form class="d-flex me-auto">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px;">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Cadastro</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
 
 <main>
 
@@ -150,7 +145,7 @@
               <circle cx="70" cy="70" r="70"/>
             </clipPath>
           </defs>
-          <image src="media/home/produto1.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
+          <image class="imagem-arredondada" src="media/home/produto1.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
         <h2>Relógio</h2>
         <p>Relógio feito com teclas de um teclado que não estava mais funcionando.</p>
         <p><a class="btn btn-secondary" href="#">Ver produto &raquo;</a></p>
@@ -161,7 +156,7 @@
             <circle cx="70" cy="70" r="70"/>
           </clipPath>
         </defs>
-        <image src="media/home/produto2.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
+        <image class="imagem-arredondada" src="media/home/produto2.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
       <h2>Pingente Resistor</h2>
       <p>Pingente feito com uma placa de circuito com resistores que foi retirado de uma placa de televisão antiga.</p>
       <p><a class="btn btn-secondary" href="#">Ver produto &raquo;</a></p>
@@ -172,7 +167,7 @@
             <circle cx="70" cy="70" r="70"/>
           </clipPath>
         </defs>
-        <image src="/media/home/produto3.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
+        <image class="imagem-arredondada" src="/media/home/produto3.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
       <h2>Fonte de bancada</h2>
       <p>Fonte de bancada feita com uma fonte de computador.</p>
         <p><a class="btn btn-secondary" href="#">Ver produto &raquo;</a></p>
