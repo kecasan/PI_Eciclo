@@ -48,9 +48,10 @@ image{
 .produto {
   flex: 1 1 calc(33.333% - 20px); /* Três produtos por linha */
   box-sizing: border-box;
+
 }
 .detalhes {
-      margin-top: 10px;
+  margin-top: 10px;
   }
 
 
@@ -60,4 +61,5 @@ image{
   margin-left: 3rem;
   box-sizing: border-box;}
 
+  
 

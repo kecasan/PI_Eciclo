@@ -17,6 +17,7 @@
 <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'carousel.css' %}" rel="stylesheet">
 
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -63,8 +64,8 @@
               </li>
             </ul>
             <form class="d-flex me-auto">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px;">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2" type="text" id="search-input" placeholder="Search" aria-label="Search" style="width: 400px;">
+              <button onclick="search()" class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul class="navbar-nav ms-auto mb-2 mb-md-0">
               <li class="nav-item">
@@ -78,7 +79,7 @@
         </div>
       </nav>
     </header>
-
+  </body>
 
 <main>
 
@@ -143,7 +144,7 @@
   <div class="container marketing">
       <div class="row">
         <div class="produtos-container">
-          <div class="col-lg-4">
+          <div class="col-lg-44">
             {% for produto in produtos %}
               <div class="produto">
                 <img class="imagem-arredondada" src="{{produto.imagem.url}}" alt="{{produto.nome}}" width="240" height="240">

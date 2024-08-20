@@ -21,3 +21,16 @@ function prevSlide() {
     showSlide(currentIndex - 1);
 }
 
+function search() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const elements = document.querySelectorAll('.produto');
+    elements.forEach(element => {
+        const text = element.textContent.toLowerCase();
+        if (text.includes(query)) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+}
+
