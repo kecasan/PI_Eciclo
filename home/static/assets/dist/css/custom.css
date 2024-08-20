@@ -37,12 +37,18 @@ image{
   background-color: #555; /* Add a dark-grey background on hover */
 }
 
-.produto {
-      text-align: center;
-  }
 .imagem-arredondada {
-      border-radius: 50%;
-  }
+  border-radius: 50%;
+}
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaçamento entre os produtos */
+}
+.produto {
+  flex: 1 1 calc(33.333% - 20px); /* Três produtos por linha */
+  box-sizing: border-box;
+}
 .detalhes {
       margin-top: 10px;
   }

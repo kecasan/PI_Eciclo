@@ -5,9 +5,7 @@ from .models import Produto
 # Create your views here.
 def home(request):
     produtos = Produto.objects.all()
-    print(produtos)
     return render(request, 'home.html', {'produtos': produtos})
-
 
 def carrinho_view(request):
     return render(request, 'carrinho.html')

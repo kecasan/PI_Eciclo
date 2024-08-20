@@ -141,44 +141,56 @@
 
     <!-- START THE FEATURETTES -->
   <div class="container marketing">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <div class="col-md-5">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1kyt47dSgutKywHwN5mET_25xH6sjnfmP&ehbc=2E312F" width="100%" height="300"></iframe>
+      <div class="row">
+        <div class="produtos-container">
+          <div class="col-lg-4">
+            {% for produto in produtos %}
+              <div class="produto">
+                <img class="imagem-arredondada" src="{{produto.imagem.url}}" alt="{{produto.nome}}" width="240" height="240">
+                <h2>{{produto.nome}}</h2>
+                <p>{{produto.descricao}}</p>
+                <p>{{produto.preco}}</p>
+              </div>
+            {% endfor %}  
           </div>
-    
-          <h2 class="featurette-heading">Pontos de coleta de resíduos eletro-eletrônicos <span class="text-muted"></span></h2>
-          <p class="lead">Pontos de Coleta são locais apropriados para o recebimento de descartes como: eletroeletrônicos, lâmpada, medicamentos, óleo de cozinha, pilhas e baterias, pneus, TV Analógica, chapa de Raio-X e vidro que serão recolhidos e levados para o seu reaproveitamento. Os pontos foram mapeados abaixo conforme o tipo de resíduo.</p>
         </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          <div class="col-md-7">
+            <div class="col-md-5">
+              <iframe src="https://www.google.com/maps/d/embed?mid=1kyt47dSgutKywHwN5mET_25xH6sjnfmP&ehbc=2E312F" width="100%" height="300"></iframe>
+            </div>
+      
+            <h2 class="featurette-heading">Pontos de coleta de resíduos eletro-eletrônicos <span class="text-muted"></span></h2>
+            <p class="lead">Pontos de Coleta são locais apropriados para o recebimento de descartes como: eletroeletrônicos, lâmpada, medicamentos, óleo de cozinha, pilhas e baterias, pneus, TV Analógica, chapa de Raio-X e vidro que serão recolhidos e levados para o seu reaproveitamento. Os pontos foram mapeados abaixo conforme o tipo de resíduo.</p>
+          </div>
         </div>
-        <div class="col-md-5 order-md-1">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
 
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+          </div>
         </div>
-      </div>
 
-      <hr class="featurette-divider">
+        <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+          </div>
+          <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+          </div>
         </div>
-        <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
 
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
+        <hr class="featurette-divider">
   </div>
     <!-- /END THE FEATURETTES -->
 
