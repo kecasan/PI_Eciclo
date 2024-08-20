@@ -1,43 +1,42 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    
-    <title>E-ciclo</title>
-    
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'home/icone.ico' %}">
-    
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/dist/css/custom.css' %}" rel="stylesheet">
-    <link href="{% static 'carousel.css' %}" rel="stylesheet">
-    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.88.1">
+
+        <title>E-ciclo</title>
+
+        <link rel="shortcut icon" type="imagex/png" href="media\home\icone.ico">
+
+            <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'carousel.css' %}" rel="stylesheet">
+
     <style>
-    .bd-placeholder-img {
+      .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
-    }
+      }
 
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+             font-size: 3.5rem;
+            }
         }
-    }
-    </style>
+     </style>
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'carousel.css' %}">
-</head>
-<body>
+    
+     <!-- Custom styles for this template -->
+     <link rel="stylesheet" href="{% static 'carousel.css'%}">
+    </head>
+    <body>
 
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -54,32 +53,33 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="{% url 'carrinho' %}">Carrinho</a>
                             </li>
+                            <a class="nav-link active" href="{%url 'lista_produtos'%}">Produtos</a>
+                        </li>
+                        <li class="nav-item">
                             <li class="nav-item">
                                 <a class="nav-link active" href="{% url 'sobre' %}">Sobre</a>
                             </li>
-                                
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:400px;">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                                <li class="nav-item">
+                        </ul>        
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px";>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                            <li class="nav-item">
                                 <a class="nav-link active" href="#">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link active" href="#">Cadastro</a>
-                                </li>
-                            </ul>
-                            </form>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Cadastro</a>                  
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+
     <br>
     <br>
     <br>
-    <br>
+<main>
     <div class="container marketing">
         <h1>Sobre</h1>
         <p><big> Nós somos uma associação sem fins lucrativos, com foco em TI Verde, que diz respeito à reunião de estratégias focadas em minimizar os efeitos da tecnologia no meio ambiente.
@@ -95,10 +95,10 @@
     <!-- FOOTER -->
     <footer class="container">
 
-    <p>&copy; 2024 E-ciclo, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
-
-    <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <p>&copy; 2024 E-ciclo, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+</main>
+        <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 </html>
