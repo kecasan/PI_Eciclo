@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import path
-from .models import Produto
+from .models import Produto, Carrinho
 
 # Create your views here.
 def home(request):
@@ -22,3 +22,9 @@ def sobre_view(request):
 
 def visualizar_produto(request):
     return render(request, 'visualizar_produto.html')
+
+def adicionar_ao_carrinho(request, produto_id):
+    produto = get_object_or_404(Produto, id=produto_id)
+    carrinho, created = Carrinho.objects.get_or_create(usuario=request.user, ativo=True)
+    carrinho.produtos.add(produto)
+    return redirect('carrinho')
