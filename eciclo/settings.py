@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'pedido',
 ]   
 
 MIDDLEWARE = [
@@ -126,3 +128,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#GERENCIANET_CLIENT_ID = config('GERENCIANET_CLIENT_ID')
+#GERENCIANET_CLIENT_SECRET = config('GERENCIANET_CLIENT_SECRET')
+#GERENCIANET_PIX_KEY = config('GERENCIANET_PIX_KEY')
+#GERENCIANET_SANDBOX = config('GERENCIANET_SANDBOX', default=True, cast=bool)
+
+os.environ['GERENCIANET_CLIENT_ID'] = 'seu_client_id_aqui'
+os.environ['GERENCIANET_CLIENT_SECRET'] = 'seu client_secret aqui'
+os.environ['GERENCIANET_PIX_KEY'] = 'sua chave pix aqui'
+os.environ['GERENCIANET_SANDBOX'] = 'True'
+
