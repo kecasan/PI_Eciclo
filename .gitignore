@@ -1,0 +1,10 @@
+*.log
+localsettings.py
+db.sqlite3
+db.sqlite3-journal
+_pycache/
+*.py[cod]
+*$py.class
+.venv
+venv/
+venv.bak/

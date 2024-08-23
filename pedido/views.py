@@ -6,6 +6,7 @@ from home.models import Produto, Categoria
 from .utils import gerar_qr_code_pix
 import json
 
+
 def finalizar_pedido(request, room_name='pedir'):
     if request.method == "GET":
         categorias = Categoria.objects.all()

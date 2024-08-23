@@ -37,6 +37,11 @@
                 margin-bottom: 20px;
                 border-radius: 5px;
                 text-align: center;
+                transition: transform 0.2s;
+            }
+
+            .produto:hover {
+                transform: scale(1.05);
             }
 
             .imagem-arredondada {
@@ -44,6 +49,10 @@
             }
 
             .detalhes {
+                margin-top: 10px;
+            }
+
+            .btn-adicionar {
                 margin-top: 10px;
             }
         </style>
@@ -95,7 +104,7 @@
                 <h1>Lista de Produtos</h1>
                 <div class="row">
                     {% for produto in produtos %}
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6">
                         <div class="produto">
                             {% if produto.imagem %}
                             <img class="imagem-arredondada" src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" width="240" height="240">
@@ -104,7 +113,7 @@
                                 <h2>{{ produto.nome }}</h2>
                                 <p>Preço: R${{ produto.preco }}</p>
                                 <p>{{ produto.descricao }}</p>
-                                <a href="{% url 'adicionar_ao_carrinho' produto.id %}" class="btn btn-primary">Adicionar ao Carrinho</a>
+                                <a href="{% url 'adicionar_ao_carrinho' produto.id %}" class="btn btn-primary btn-adicionar">Adicionar ao Carrinho</a>
                             </div>
                         </div>
                     </div>
