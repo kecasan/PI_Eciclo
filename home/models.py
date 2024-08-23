@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to='produtos/', null=True, blank=True)
@@ -6,9 +7,21 @@ class Produto(models.Model):
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     estoque = models.IntegerField()
     categoria = models.CharField(max_length=100)
+    ativo = models.BooleanField(default=True)
+
+    @mark_safe
+    def icone(self):
+        return f'<img width="30px" src="/media/{self.img}">'
+
 
     def __str__(self):
-        return self.nome
+        return self.nome_produto
+    
+class Categoria(models.Model):
+    categoria = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.categoria
     
 class Usuario(models.Model):
     nome = models.CharField(max_length=100)
