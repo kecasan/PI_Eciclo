@@ -10,28 +10,13 @@
     
     <title>E-ciclo</title>
 
-    <link rel="canonical" href="">
     <link rel="shortcut icon" type="imagex/png" href="media\home\icone.ico">
   
     <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/custom.css' %}" rel="stylesheet">
 <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'carousel.css' %}" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
 
     
     <!-- Custom styles for this template -->
@@ -42,25 +27,29 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <img class="navbar-brand" src="media/home/logo.gif" alt="logo" width="100px" height="100px">
+          <img class="navbar-brand" src="media/home/logo.gif" aria-current="page" href="#" alt="logo" width="100px" height="100px">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Página Incial</a>
+                <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Carrinho</a>
+                <a class="nav-link active" href="{%url 'carrinho'%}">Carrinho</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Sobre</a>
+                <a class="nav-link active" href="{%url 'lista_produtos'%}">Produtos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'sobre' %}">Sobre</a>
               </li>
             </ul>
             <form class="d-flex me-auto">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px;">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2" type="text" id="search-input" placeholder="Search" aria-label="Search" style="width: 400px;">
+              <button onclick="search()" class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul class="navbar-nav ms-auto mb-2 mb-md-0">
               <li class="nav-item">
@@ -74,7 +63,8 @@
         </div>
       </nav>
     </header>
-    
+  </body>
+
 <main>
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -134,97 +124,90 @@
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <div class="container marketing">
-    <h1>Produtos</h1>
-    <br>
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-          <defs>
-            <clipPath id="clip-circle">
-              <circle cx="70" cy="70" r="70"/>
-            </clipPath>
-          </defs>
-          <image class="imagem-arredondada" src="media/home/produto1.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
-        <h2>Relógio</h2>
-        <p>Relógio feito com teclas de um teclado que não estava mais funcionando.</p>
-        <p><a class="btn btn-secondary" href="#">Ver produto &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <defs>
-          <clipPath id="clip-circle">
-            <circle cx="70" cy="70" r="70"/>
-          </clipPath>
-        </defs>
-        <image class="imagem-arredondada" src="media/home/produto2.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
-      <h2>Pingente Resistor</h2>
-      <p>Pingente feito com uma placa de circuito com resistores que foi retirado de uma placa de televisão antiga.</p>
-      <p><a class="btn btn-secondary" href="#">Ver produto &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <defs>
-          <clipPath id="clip-circle">
-            <circle cx="70" cy="70" r="70"/>
-          </clipPath>
-        </defs>
-        <image class="imagem-arredondada" src="media/home/produto3.jpg" x="0" y="0" width="240" height="240" clip-path="url(clip-circle)"/>
-      <h2>Fonte de bancada</h2>
-      <p>Fonte de bancada feita com uma fonte de computador.</p>
-        <p><a class="btn btn-secondary" href="#">Ver produto &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
     <!-- START THE FEATURETTES -->
+  <div class="container marketing">
+      <div class="row">
+        <div class="produtos-container">
+          <div class="col-lg-44">
+            {% for produto in produtos %}
+              <div class="produto">
+                <img class="imagem-arredondada" src="{{produto.imagem.url}}" alt="{{produto.nome}}" width="240" height="240">
+                <h2>{{produto.nome}}</h2>
+                <p>{{produto.descricao}}</p>
+                <p>{{produto.preco}}</p>
+              </div>
+            {% endfor %}  
+          </div>
+        </div>
+          <div class="col-md-7">
+            <div class="col-md-5">
+              <iframe src="https://www.google.com/maps/d/embed?mid=1kyt47dSgutKywHwN5mET_25xH6sjnfmP&ehbc=2E312F" width="100%" height="300"></iframe>
+            </div>
+      
+            <h2 class="featurette-heading">Pontos de coleta de resíduos eletro-eletrônicos <span class="text-muted"></span></h2>
+            <p class="lead">Pontos de Coleta são locais apropriados para o recebimento de descartes como: eletroeletrônicos, lâmpada, medicamentos, óleo de cozinha, pilhas e baterias, pneus, TV Analógica, chapa de Raio-X e vidro que serão recolhidos e levados para o seu reaproveitamento. Os pontos foram mapeados abaixo conforme o tipo de resíduo.</p>
+          </div>
+        </div>
 
-    <hr class="featurette-divider">
+        <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Pontos de coleta de resíduos eletro-eletrônicos <span class="text-muted"></span></h2>
-        <p class="lead">Pontos de Coleta são locais apropriados para o recebimento de descartes como: eletroeletrônicos, lâmpada, medicamentos, óleo de cozinha, pilhas e baterias, pneus, TV Analógica, chapa de Raio-X e vidro que serão recolhidos e levados para o seu reaproveitamento. Os pontos foram mapeados abaixo conforme o tipo de resíduo.</p>
-      </div>
-      <div class="col-md-5">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1kyt47dSgutKywHwN5mET_25xH6sjnfmP&ehbc=2E312F" width="640" height="480"></iframe>
-      </div>
-    </div>
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="1200" height="800" href="https://injecaodeplasticos.com.br/wp-content/uploads/2019/03/lixo-eletronico-e-a-reciclagem-do-plastico.jpg"></img>
 
-    <hr class="featurette-divider">
+          </div>
+        </div>
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <hr class="featurette-divider">
 
-      </div>
-    </div>
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+          </div>
+          <div class="col-md-5">
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
 
-    <hr class="featurette-divider">
+          </div>
+        </div>
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
+        <hr class="featurette-divider">
+  </div>
     <!-- /END THE FEATURETTES -->
 
-  </div><!-- /.container -->
+ 
 
 
   <!-- FOOTER -->
   <footer class="container">
-    <button class="btn btn-lg btn-primary"><a href="#"></a></button>
+    <button class="float-end btn btn-lg btn-primary" onclick="topFunction()" id="myBtn" title="Go to top"><img src="media\home\pra-cima.png" width="10px" height="10px"></img></button>
+    <script>
+      // Get the button:
+      let mybutton = document.getElementById("myBtn");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
+
+
     <p>&copy; 2024 E-ciclo, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>

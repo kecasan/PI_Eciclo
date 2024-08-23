@@ -1,0 +1,65 @@
+image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Customiza o fundo dos botões */
+.btn-primary {
+    background-color: #ff5733; /* cor de fundo personalizada */
+    border-color: #ff5733; /* cor da borda personalizada */
+  }
+  
+.carousel {
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+  }
+
+/* Carrosel dos produtos */
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #212529; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.imagem-arredondada {
+  border-radius: 50%;
+}
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaçamento entre os produtos */
+}
+.produto {
+  flex: 1 1 calc(33.333% - 20px); /* Três produtos por linha */
+  box-sizing: border-box;
+
+}
+.detalhes {
+  margin-top: 10px;
+  }
+
+
+.mapa {
+  padding: 0px;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  box-sizing: border-box;}
+
+  
+

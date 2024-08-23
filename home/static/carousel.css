@@ -3,14 +3,16 @@
 /* Padding below the footer and lighter body text */
 
 body {
+    overflow-x: hidden;
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #5a5a5a;
   }
   
   .imagem-arredondada {
-    border-radius: 50px; /* Ajuste o valor para o nível de arredondamento desejado */
+    border-radius: 50px;
   }
+  
   
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -92,7 +94,7 @@ body {
   
   @media (min-width: 62em) {
     .featurette-heading {
-      margin-top: 7rem;
+      margin-top: 4rem;
     }
   }
   
